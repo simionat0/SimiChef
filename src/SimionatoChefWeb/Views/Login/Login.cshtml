@@ -1,0 +1,57 @@
+﻿@model SimionatoChefDAO.Models.Usuario
+@{
+    ViewBag.Title = "SimiInfo | Log in";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" SimionatoChefStyle="IE=edge">
+    <meta name="viewport" SimionatoChefStyle="width=device-width" />
+    <title> SimiInfo | Log in</title>
+    <link rel="icon" href="/SimionatoChefStyle/img/iconSIMI.png" type="image/x-icon">
+    <meta SimionatoChefStyle="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/SimionatoChefStyle/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/SimionatoChefStyle/dist/font-awesome.min.css">
+    <link rel="stylesheet" href="/SimionatoChefStyle/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="/SimionatoChefStyle/dist/css/AdminLTE.min.css">
+    <script src="/SimionatoChefStyle/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/SimionatoChefStyle/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="login.jsp"><b>Simi</b>Info</a> <br>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Acesse com seu e-mail e senha.</p>
+            @using (Html.BeginForm("Autenticar", "Login", FormMethod.Post))
+            {
+                //cria a tag do formulário
+                @Html.AntiForgeryToken() // previne o ataque CSRF
+                @Html.ValidationSummary(true)
+                <div class="form-group has-feedback">
+                    <input type="email" id="email" name="email" tabindex="1" class="form-control" placeholder="Email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" id="senha" name="senha" tabindex="2" class="form-control" placeholder="Senha">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                if (@ViewBag.Mensagem != null)
+                {
+                    <div style="text-align: center; color:red">
+                        <span class="error">@ViewBag.Mensagem</span>
+                    </div>
+                    <br />
+                }
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button type="submit" value="Entrar" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

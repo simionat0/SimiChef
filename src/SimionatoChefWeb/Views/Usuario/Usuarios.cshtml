@@ -1,0 +1,276 @@
+﻿@model SimionatoChefBusiness.Models.View.UsuarioView
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" SimionatoChefStyle="IE=edge">
+    <title>SimiInfo | Configurações</title>
+    <link rel="icon" href="~/SimionatoChefStyle/img/iconSIMI.png" type="image/x-icon">
+    <meta SimionatoChefStyle="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/iCheck/all.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/modal.css">
+    <script type="text/javascript" src="~/SimionatoChefStyle/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="~/SimionatoChefStyle/dist/js/valida/valida_formulario_usuario.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/select2/select2.full.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/daterangepicker/moment.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/fastclick/fastclick.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/app.min.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/demo.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/mascaraData.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/valida/valida_formulario_usuario.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/consult_cep.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/pesquisarUsuario.js"></script>
+</head>
+<body class="hold-transition skin-black-light sidebar-mini">
+
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="../../Dashboard" class="logo">
+                <span class="logo-mini"><b>S</b>I</span>
+                <span class="logo-lg"><b>Simi</b>Info</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Menu</span> </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li> <a href="../../Login/Logoff"> <i class="glyphicon glyphicon-log-out"></i> </a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <div class="main-sidebar">
+                        <div class="sidebar">
+                            <div class="user-panel">
+                                <div class="pull-left image"> <img src="~/SimionatoChefStyle/img/user_icon.png"></div>
+                                <div class="pull-left info">
+                                    <p>@Html.DisplayFor(model => model.UsuarioLogado.Nome)</p>
+                                    <a href="#"><i class="text-success"></i>@Html.DisplayFor(model => model.UsuarioLogado.Cargo)</a>
+                                </div>
+                            </div>
+                            <ul class="sidebar-menu">
+                                <li> <a href="../../Dashboard"> <i class="glyphicon glyphicon-home"></i> <span>Inicio</span></a>
+                                <li>
+                                    <a href="#"> <i class="	glyphicon glyphicon-shopping-cart"></i> <span>Vendas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="../../Venda/CriarVenda"><i class="fa fa-circle-o"></i> Criar Venda</a></li>
+                                        <li><a href="../../Venda/MinhasVendas"><i class="fa fa-circle-o"></i> Minhas Vendas</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#"> <i class="glyphicon glyphicon-glass"></i> <span>Estoque</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="../Produto"><i class="fa fa-circle-o"></i> Produtos</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-usd"></i> <span>Financeiro</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+
+                                        <li>
+                                            <a href="../../Financeiro/RelatorioVendas">
+                                                <i class="fa fa-circle-o"></i> Relatório de Vendas
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="active treeview">
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-user"></i> <span>Configurações</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="../../Cliente">
+                                                <i class="fa fa-circle-o"></i> Clientes
+                                            </a>
+                                        </li>
+                                        <li class="active treeview">
+                                            <a href="../../Usuario">
+                                                <i class="fa fa-circle-o"></i> Usuários
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </aside>
+        <div class="content-wrapper">
+            @if (ViewBag.Mensagem != null)
+            {
+                <div class="box">
+                    <div class="callout callout-warning">
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-warning" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Fechar">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                        <h4>Atenção!</h4>
+                        <p>
+                            Não foi possivel salvar o usuário. <br />
+                            Mótivo: @ViewBag.Mensagem
+                        </p>
+                    </div>
+                </div>
+            }
+            <section class="content-header">
+                <h1>
+                    Cadastro de Usuário
+                    <small>Novo Usuário</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li class="active">Cadastro de Usuário</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Cadastrar Usuário</h3>
+                                <div class="box-tools">
+                                    <form id="pesquisaUser" name="pesquisaUser" action="../../../pesquisaId" method="post">
+                                        <div class="input-group input-group-sm" style="width: 150px;">
+
+                                            <input type="hidden" id="id_pesquisa" name="id_pesquisa" class="form-control pull-right" placeholder="Pesquisar pelo ID">
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <form id="novo_usuario" name="novo_usuario" action="Usuario/Salvar" method="post">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="name">Nome Completo</label>
+                                                <input type="hidden" id="id" name="id" value="@Html.DisplayFor(model => model.Usuario.Id)" />
+                                                <input type="text" class="form-control" id="nome" name="nome" value="@Html.DisplayFor(model => model.Usuario.Nome)" tabindex="1" placeholder="Nome Completo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cargo">Cargo</label>
+                                                <input type="text" class="form-control" id="cargo" name="cargo" value="@Html.DisplayFor(model => model.Usuario.Cargo)" tabindex="3" placeholder="Cargo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Telefone:</label>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone"></i>
+                                                    </div>
+                                                    <input type="text" id="telefone" name="telefone" value="@Html.DisplayFor(model => model.Usuario.Telefone)" class="form-control" tabindex="5" data-inputmask='"mask": "(99) 9999-99999"' data-mask>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="email">E-Mail</label>
+                                                <input type="text" class="form-control" tabindex="2" id="email" value="@Html.DisplayFor(model => model.Usuario.Email)" name="email" placeholder="E-Mail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="senha">Senha</label>
+                                                <input type="password" class="form-control" tabindex="4" id="senha" value="@Html.DisplayFor(model => model.Usuario.Senha)" name="senha" placeholder="Senha">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Usuário</label>
+                                                <select class="form-control" name="status" id="status" value="@Html.DisplayFor(model => model.Usuario.Status)" tabindex="11" style="width: 100%;">
+                                                    <option value="1">Ativo</option>
+                                                    <option value="0">Bloqueado</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" onclick="valida_form_user('novo_usuario')" class="btn btn-block btn-primary btn-sm"><i class="fa fa-save"></i> Salvar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Lista de Usuários</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" name="id_pesquisa" id="id_pesquisa">
+                                        <table id="lista_usuarios" name="lista_usuarios" class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nome</th>
+                                                    <th>Cargo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var element in Model.ListaUsuario)
+                                                {
+                                                    <tr>
+                                                        <td>@Html.DisplayFor(m => element.Id)</td>
+                                                        <td>@Html.DisplayFor(m => element.Nome) </td>
+                                                        <td>@Html.DisplayFor(m => element.Cargo)</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.1
+            </div>
+            <strong>Copyright &copy; 2016-@DateTime.Now.Year <a href="#">Gustavo Simionato</a>.</strong> Todos os Direitos Reservados.
+        </footer>
+    </div>
+</body>
+</html>

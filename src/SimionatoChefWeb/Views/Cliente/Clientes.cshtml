@@ -1,0 +1,358 @@
+﻿@model SimionatoChefBusiness.Models.View.ClienteView
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" SimionatoChefStyle="IE=edge">
+    <title>SimiInfo | Configurações</title>
+    <link rel="icon" href="~/SimionatoChefStyle/img/iconSIMI.png" type="image/x-icon">
+    <meta SimionatoChefStyle="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/iCheck/all.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/modal.css">
+    <script type="text/javascript" src="~/SimionatoChefStyle/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="~/SimionatoChefStyle/dist/js/valida/valida_formulario_usuario.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/select2/select2.full.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/daterangepicker/moment.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/fastclick/fastclick.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/app.min.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/demo.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/mascaraData.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/valida/valida_formulario_cliente.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/consult_cep.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/pesquisarCliente.js"></script>
+</head>
+<body class="hold-transition skin-black-light sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="../../Dashboard" class="logo">
+                <span class="logo-mini"><b>S</b>I</span>
+                <span class="logo-lg"><b>Simi</b>Info</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Menu</span> </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li> <a href="../../Login/Logoff"> <i class="glyphicon glyphicon-log-out"></i> </a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <div class="main-sidebar">
+                        <div class="sidebar">
+                            <div class="user-panel">
+                                <div class="pull-left image"> <img src="~/SimionatoChefStyle/img/user_icon.png"></div>
+                                <div class="pull-left info">
+                                    <p>@Html.DisplayFor(model => model.Usuario.Nome)</p>
+                                    <a href="#"><i class="text-success"></i>@Html.DisplayFor(model => model.Usuario.Cargo)</a>
+                                </div>
+                            </div>
+                            <ul class="sidebar-menu">
+                                <li> <a href="../../Dashboard"> <i class="glyphicon glyphicon-home"></i> <span>Inicio</span></a>
+                                <li>
+                                    <a href="#"> <i class="	glyphicon glyphicon-shopping-cart"></i> <span>Vendas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="../../Venda/CriarVenda"><i class="fa fa-circle-o"></i> Criar Venda</a></li>
+                                        <li><a href="../../Venda/MinhasVendas"><i class="fa fa-circle-o"></i> Minhas Vendas</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#"> <i class="glyphicon glyphicon-glass"></i> <span>Estoque</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="../../Produto"><i class="fa fa-circle-o"></i> Produtos</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-usd"></i> <span>Financeiro</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="../../Financeiro/RelatorioVendas">
+                                                <i class="fa fa-circle-o"></i> Relatório de Vendas
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="active treeview">
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-user"></i> <span>Configurações</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li class="active treeview">
+                                            <a href="../../Cliente">
+                                                <i class="fa fa-circle-o"></i> Clientes
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../../Usuario">
+                                                <i class="fa fa-circle-o"></i> Usuários
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </aside>
+        <div class="content-wrapper">
+            @if (ViewBag.Mensagem != null)
+            {
+                <div class="box">
+                    <div class="callout callout-warning">
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-warning" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Fechar">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                        <h4>Atenção!</h4>
+                        <p>
+                            Não foi possivel salvar o cliente. <br />
+                            Mótivo: @ViewBag.Mensagem
+                        </p>
+                    </div>
+                </div>
+            }
+            @if (ViewBag.Sucesso != null)
+            {
+                <div class="box">
+                    <div class="callout callout-success">
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-warning" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Fechar">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                        <h4>Obs</h4>
+                        <p>
+                            @ViewBag.Sucesso
+                        </p>
+                    </div>
+                </div>
+            }
+            <section class="content-header">
+                <h1>
+                    Cadastro de Cliente
+                    <small>Novo Cliente</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                    <li><a href="#">Configurações</a></li>
+                    <li class="active">Cadastro de Clientes</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Cadastrar Cliente</h3>
+                                <div class="box-tools">
+                                    <form id="pesquisaCli" name="pesquisaCli" action="~/Content/pesquisaIdCli" method="post">
+                                        <div class="input-group input-group-sm" style="width: 150px;">
+
+                                            <input type="hidden" id="idPesquisaCli" name="idPesquisaCli" class="form-control pull-right" placeholder="Pesquisar pelo ID" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <form id="SalvarCliente" name="SalvarCliente" action="/Cliente/Salvar" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="name">Nome Completo</label>
+                                                <input type="text" class="form-control" id="nome" name="nome" value="@Html.DisplayFor(model => model.Cliente.Nome)" placeholder="Nome Completo" tabindex="1">
+                                                <input type="hidden" id="id" name="id" value="@Html.DisplayFor(model => model.Usuario.Id)">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">CEP</label>
+                                                <input type="text" class="form-control" placeholder="CEP" value="@Html.DisplayFor(model => model.Cliente.Cep)" data-inputmask='"mask": "99.999-999"' data-mask tabindex="2" id="cep" name="cep">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Logradouro</label>
+                                                <input type="text" tabindex="3" class="form-control" id="logradouro" name="logradouro" value="@Html.DisplayFor(model => model.Cliente.Logradouro)" placeholder="Logradouro">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Numero</label>
+                                                <input type="text" class="form-control" tabindex="4" name="numero" value="@Html.DisplayFor(model => model.Cliente.Numero)" id="numero" placeholder="Numero">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Bairro</label>
+                                                <input type="text" tabindex="5" class="form-control" id="bairro" name="bairro" value="@Html.DisplayFor(model => model.Cliente.Bairro)" placeholder="Bairro">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Cidade</label>
+                                                <input type="text" class="form-control" tabindex="6" id="cidade" name="cidade" value="@Html.DisplayFor(model => model.Cliente.Cidade)" placeholder="Cidade">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Estado</label>
+                                                <select class="form-control select2" tabindex="7" id="uf" name="uf" value="@Html.DisplayFor(model => model.Cliente.Uf)" style="width: 100%;">
+                                                    <option>AC</option>
+                                                    <option>AL</option>
+                                                    <option>AP</option>
+                                                    <option>AM</option>
+                                                    <option>BA</option>
+                                                    <option>CE</option>
+                                                    <option>DF</option>
+                                                    <option>ES</option>
+                                                    <option>GO</option>
+                                                    <option>MA</option>
+                                                    <option>MT</option>
+                                                    <option>MS</option>
+                                                    <option>MG</option>
+                                                    <option>PA</option>
+                                                    <option>PB</option>
+                                                    <option>PE</option>
+                                                    <option>PI</option>
+                                                    <option selected="selected">PR</option>
+                                                    <option>RJ</option>
+                                                    <option>RN</option>
+                                                    <option>RS</option>
+                                                    <option>RO</option>
+                                                    <option>RR</option>
+                                                    <option>SC</option>
+                                                    <option>SP</option>
+                                                    <option>SE</option>
+                                                    <option>TO</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Telefone</label>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone"></i>
+                                                    </div>
+                                                    <input type="text" tabindex="8" class="form-control" value="@Html.DisplayFor(model => model.Cliente.Telefone)" data-inputmask='"mask": "(99) 9999-99999"' data-mask name="telefone" id="telefone">
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">E-Mail</label>
+                                                <input type="text" class="form-control" id="email" value="@Html.DisplayFor(model => model.Cliente.Email)" tabindex="9" name="email" placeholder="E-Mail">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="name">Senha</label>
+                                                <input type="password" tabindex="10" class="form-control" id="senha" value="@Html.DisplayFor(model => model.Cliente.Senha)" name="senha" placeholder="Senha">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cliente</label>
+                                                <select class="form-control" name="status" id="status" value="@Html.DisplayFor(model => model.Cliente.Status)" tabindex="11" style="width: 100%;">
+                                                    <option value="1">Ativo</option>
+                                                    <option value="0">Bloqueado</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">&nbsp;</label>
+                                                <button type="button" data-toggle="modal" data-target="#modalSalvarCliente" class="btn btn-block btn-primary btn-sm"><i class="fa fa-save"></i> Salvar</button>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="modalSalvarCliente" tabindex="-1" role="dialog" aria-labelledby="modalSalvarUsuarioLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="modalSalvarCliente">Você deseja salvar o Cliente?</h4>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" onclick="valida_form_cli('SalvarCliente')" value="SalvarCliente" class="btn btn-primary"><i class="fa fa-save"></i> Salvar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Modal de Salvar Cliente-->
+                        <!-- Termina Modal de Salvar Cliente -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Lista de Clientes</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="hidden" name="idPesquisaCli" id="idPesquisaCli">
+                                        <table id="lista_clientes" name="lista_clientes" class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nome</th>
+                                                    <th>Telefone</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var element in Model.ListaCliente)
+                                                {
+                                                    <tr>
+                                                        <td>@Html.DisplayFor(m => element.Id)</td>
+                                                        <td>@Html.DisplayFor(m => element.Nome) </td>
+                                                        <td>@Html.DisplayFor(m => element.Telefone)</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.1
+            </div>
+            <strong>Copyright &copy; 2016-@DateTime.Now.Year <a href="#">Gustavo Simionato</a>.</strong> Todos os Direitos Reservados.
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿@model SimionatoChefBusiness.Models.View.VendaView
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" SimionatoChefStyle="IE=edge">
+    <title>SimiInfo | Pedido</title>
+    <link rel="icon" href="~/SimionatoChefStyle/img/iconSIMI.png" type="image/x-icon">
+    <meta SimionatoChefStyle="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="~/SimionatoChefStyle/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/AdminLTE.min.css">
+    <script src="~/SimionatoChefStyle/dist/js/redirectImprimirVenda.js"></script>
+
+</head>
+<body onload="window.print();">
+
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="invoice">
+            <!-- title row -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="page-header">
+                        SimiInfo.
+                        <small class="pull-right">Pedido: @Html.DisplayFor(model => model.Venda.Id)</small>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <h4 style="text-align: center">
+                        Simionato Técnologia, inc.
+                    </h4>
+                    <br>
+                    <p>
+                        CNPJ 18.842.763/0001-45 - Inscr. Est. 975.05360-15
+                    </p>
+                    <p>
+                        Email: gm.simionato@gmail.com
+                    </p>
+                    <p>
+                        Telefone:(41)9989 8083
+                    </p>
+                    <p>
+                        Rua Ivo Flemming, 84 - Bacacheri
+                    </p>
+                    <p>
+                        CEP 82600-480 - Curitiba/PR
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>
+                        Detalhes do Pedido:
+                        <small class="pull-right">Data: @Html.DisplayFor(model => model.Venda.Datavenda)</small>
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 table-responsive">
+                    <table class="table  table-striped">
+                        <tbody>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Qtd</th>
+                                <th>Preço</th>
+                            </tr>
+                            @foreach (var element in Model.Venda.Produtos)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(m => element.Nome) </td>
+                                    <td>@Html.DisplayFor(m => element.Quantidade)</td>
+                                    <td>@Html.DisplayFor(m => element.Valor)</td>
+                                </tr>
+                            }
+                            <tr>
+                                <th>Total:</th>
+                                <th></th>
+                                <th>
+                                    @Html.DisplayFor(model => model.Venda.Total)
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+

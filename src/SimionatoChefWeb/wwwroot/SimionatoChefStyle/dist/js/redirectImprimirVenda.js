@@ -1,0 +1,1 @@
+window.setTimeout("location.href='/Dashboard'",2000);

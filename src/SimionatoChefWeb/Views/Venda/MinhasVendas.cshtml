@@ -1,0 +1,226 @@
+﻿@model SimionatoChefBusiness.Models.View.MinhasVendasView
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" SimionatoChefStyle="IE=edge">
+    <title>SimiInfo| Vendas</title>
+    <link rel="icon" href="~/SimionatoChefStyle/img/iconSIMI.png" type="image/x-icon">
+    <meta SimionatoChefStyle="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/SimionatoChefStyle/dist/css/skins/_all-skins.min.css">
+    <script src="~/SimionatoChefStyle/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="~/SimionatoChefStyle/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/chartjs/Chart.min.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/fastclick/fastclick.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/app.min.js"></script>
+    <script src="~/SimionatoChefStyle/dist/js/demo.js"></script>
+    <script src="~/SimionatoChefStyle/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+</head>
+<body class="hold-transition skin-orange-light sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="../../Dashboard" class="logo">
+                <span class="logo-mini"><b>Simi</b>Info</span>
+                <span class="logo-lg"><b>Simi</b>Info</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Menu</span> </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li> <a href="../Login/Logoff"> <i class="glyphicon glyphicon-log-out"></i> </a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="main-sidebar">
+                    <div class="sidebar">
+                        <div class="user-panel">
+                            <div class="pull-left image"> <img src="~/SimionatoChefStyle/img/user_icon.png"></div>
+                            <div class="pull-left info">
+                                <p>@Html.DisplayFor(model => model.Usuario.Nome)</p>
+                                <a href="#"><i class="text-success"></i>@Html.DisplayFor(model => model.Usuario.Cargo)</a>
+                            </div>
+                        </div>
+                        <ul class="sidebar-menu">
+                            <li> <a href="../../Dashboard"> <i class="glyphicon glyphicon-home"></i> <span>Inicio</span></a>
+                            <li class="active treeview">
+                                <a href="#"> <i class="	glyphicon glyphicon-shopping-cart"></i> <span>Vendas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="CriarVenda"><i class="fa fa-circle-o"></i> Criar Venda</a></li>
+                                    <li class="active treeview"><a href="MinhasVendas"><i class="fa fa-circle-o"></i> Minhas Vendas</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="glyphicon glyphicon-glass"></i> <span>Estoque</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../../Produto"><i class="fa fa-circle-o"></i>Produtos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-usd"></i> <span>Financeiro</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="../../Financeiro/RelatorioVendas">
+                                            <i class="fa fa-circle-o"></i> Relatório de Vendas
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-user"></i> <span>Configurações</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="../../Cliente">
+                                            <i class="fa fa-circle-o"></i> Cliente
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../../Usuario">
+                                            <i class="fa fa-circle-o"></i> Usuários
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    Vendas
+                    <small>Minhas Vendas</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="../Dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="Venda"></a>Vendas</li>
+                    <li class="active">Minhas Vendas</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box box-primary ">
+                            <div class="box-header with-border">
+                                <div class="margin">
+                                </div>
+                                <h3 class="box-title">
+                                    <a data-toggle="tooltip" title="Imprimir Venda!" target="_blank" href="/Venda/ImpressaoVenda/@Html.DisplayFor(model => model.Venda.Id)"><span class="badge bg-blue-active"><span class="glyphicon glyphicon-print"></span></span></a>
+                                    Dados do Pedido: @Html.DisplayFor(model => model.Venda.Id)  | Data: @Html.DisplayFor(model => model.Venda.Datavenda)
+                                </h3>
+                                <small><br>&nbsp;</small>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td><h5>Produto</h5></td>
+                                            <td><h5>Qtd</h5></td>
+                                            <td><h5>Valor</h5></td>
+                                        </tr>
+                                        @foreach (var element in Model.Venda.Produtos)
+                                        {
+                                            <tr>
+                                                <td>@Html.DisplayFor(m => element.Nome)</td>
+                                                <td>@Html.DisplayFor(m => element.Quantidade)</td>
+                                                <td>R$:@Html.DisplayFor(m => element.Valor)</td>
+                                            </tr>
+                                        }
+                                        <tr>
+                                            <td><h4 class="box-title">Total:</h4></td>
+                                            <td></td>
+                                            <td>
+                                                <h4 class="box-title">
+                                                    R$:@Html.DisplayFor(model => model.Venda.Total)
+                                                </h4>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="box-comment">
+                                    <div class="btn-group">
+                                        <div class="box-footer">
+                                            <p class="box-title">Alterar Status do Pedido</p>
+                                        </div>
+                                        <form class="form-horizontal" id="AlterarStatusVenda" name="AlterarStatusVenda" action="/Venda/AlterarStatusVenda" method="post">
+                                            <input type="hidden" id="idVenda" name="idVenda" value="@Html.DisplayFor(model => model.Venda.Id)">
+                                            <div class="input-group margin">
+                                                <select class="form-control" name="id" id="id">
+                                                    @foreach (var element in Model.Status)
+                                                    {
+                                                        <option value="@Html.DisplayFor(m => element.Id)">@Html.DisplayFor(m => element.Nome)</option>
+                                                    }
+                                                </select>
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Salvar</button>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Pedidos</h3>
+                            </div>
+                            <div class="box-body no-padding pre-scrollable2">
+                                <table class="table">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Horário</th>
+                                        <th>Status</th>
+                                        <th>Valor</th>
+                                        <th>&</th>
+                                    </tr>
+                                    @foreach (var element in Model.ListaVendas)
+                                    {
+                                        <tr>
+                                            <td><a href="/Venda/MinhasVendas/@Html.DisplayFor(m => element.Id)">@Html.DisplayFor(m => element.Id)</a></td>
+                                            <td><a href="/Venda/MinhasVendas/@Html.DisplayFor(m => element.Id)">@Html.DisplayFor(m => element.Datavenda)</a></td>
+                                            <td>@Html.Raw(element.StatusVenda)</td>
+                                            <td> <span class="badge bg-teal-active">@Html.DisplayFor(m => element.Total)</span></td>
+                                            <td>
+                                                <a data-toggle="tooltip" title="Abrir Venda!" href="/Venda/MinhasVendas/@Html.DisplayFor(m => element.Id)"><span class="badge bg-blue"><span class="glyphicon glyphicon-list-alt"></span></span></a>
+                                                <a data-toggle="tooltip" title="Imprimir Venda!" target="_blank" href="/Venda/ImpressaoVenda/@Html.DisplayFor(m => element.Id)"><span class="badge bg-blue-active"><span class="glyphicon glyphicon-print"></span></span></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="control-sidebar-bg"></div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 1.0.1
+        </div>
+        <strong>Copyright &copy; 2016-@DateTime.Now.Year <a href="#">Gustavo Simionato</a>.</strong> Todos os Direitos Reservados.
+    </footer>
+    <div class="control-sidebar-bg"></div>
+</body>
+</html>
